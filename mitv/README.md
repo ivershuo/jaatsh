@@ -6,6 +6,6 @@
  ```go
 import "github.com/ivershuo/jaatsh/mitv"
 
-mitv := New("192.168.0.201") // 电视IP
-err := mitv.VolumeUp()
+tv := mitv.New("192.168.0.201") // 电视IP
+err := tv.VolumeUp()
  ```

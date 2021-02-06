@@ -13,7 +13,7 @@ const (
   bdid  = "your bdid"
   bduss = "your bduss"
 )
-xiaodu :=  NewDu(cid, cuid, bdid, bduss)
+xiaodu :=  du.NewDu(cid, cuid, bdid, bduss)
 
 // 加载一个设备。appliance id 可提前抓包配置好或通过 GetDevs() 获取
 device := xiaodu.NewDevice("a_appliance_id")
@@ -23,7 +23,7 @@ err := device.Act("turnOn")
 
 /* 将设备（空调）调至制热模式 */
 type payloadMode struct {
-  CtPayload //嵌套 CtPayload 后可自动添加 appliance 信息
+  du.CtPayload //嵌套 CtPayload 后可自动添加 appliance 信息
   Mode struct {
     Value string `json:"value"`
   } `json:"mode"`
